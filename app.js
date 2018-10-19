@@ -13,15 +13,9 @@ var apiArticlesRouter = require('./routes/api/articles');
 var apiAuthRouter = require('./routes/api/auth');
 var apiUsersRouter = require('./routes/api/users');
 
-
 var app = express();
 
-//Call the config file
-if(process.env.NODE_ENV==='production'){
-  var config = require('../config');
-}else{
-  var config = require('./config.dev');
-}
+var config = require('../config');
 
 //Connect to MongoDB
 mongoose.connect(config.mongodb, { useNewUrlParser: true });

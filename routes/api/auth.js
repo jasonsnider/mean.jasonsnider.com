@@ -4,11 +4,7 @@ var Users = require('../../models/users');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
-if(process.env.NODE_ENV==='production'){
-  var config = require('../../../config');
-}else{
-  var config = require('../../config.dev');
-}
+var config = require('../../../config');
 
 router.post('/register', function(req, res, next) {
   bcrypt.hash(req.body.password, 13, (err, hash) => {
