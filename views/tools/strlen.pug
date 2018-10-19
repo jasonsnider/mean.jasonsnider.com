@@ -1,9 +1,9 @@
 extends ../layouts/default
 block content
-  h1 How many characters are in this string?
 
-  p Sometimes I just need to get the length of a string. 
-
+  h1= article.title
+  div!= article.body
+  
   div
     label(for="InputString")
       | Enter a string to calculate it's length
