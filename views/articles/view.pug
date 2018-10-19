@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+block content
+
+  article(itemscope itemtype="https://schema.org/BlogPosting")
+    h1(itemprop="headline")= article.title
+    div(itemprop="datePublished" content=article.published)
+      em
+        - var date = new Date(article.published).toISOString().slice(0, 19).replace('T', ' ');
+        small Posted: #{date}
+    div(itemprop="articleBody")!= article.body
+    hr
+    aside.bio(itemprop="author" itemscope itemtype='https://schema.org/Person')
+      a(href='#')
+        img(alt='64x64', src='/img/b449cfaa4cab48910ad8c0d9fdb812d0.jpg' height='128px' width='128px')
+      h2 About the Author
+      | Hi, I'm &nbsp;
+      a(href='https://plus.google.com/+JasonSnider?rel=author', target='_blank', itemprop='name') Jason Snider
+      | &nbsp; a &nbsp;
+      span(itemprop='jobTitle') full stack web and hybrid mobile application developer, dev bootcamp instructor,
+        |&nbsp;systems architect
+      | , Linux aficionado, open source advocate, impromptu DBA and security enthusiast with a
+      | sincere passion for building and advancing knowledge while resolving complex problems and business challenges
+      | through technical innovation.
+
+  //
+    hr
+    aside
+      a(name='comments')
+      span#slug(class='hide')=article.slug
+      #disqus_thread(style='min-height: 300px')
+      script(type='text/javascript').
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var slug = document.getElementById('slug').innerHTML;
+        var disqus_shortname = 'jasondsnider'; // required: replace example with your forum shortname
+        var disqus_identifier = slug;
+        var disqus_url = 'https://jasonsnider.com/articles/view/' + slug;
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      noscript
+        | Please enable JavaScript to view the
+        a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+
+        a.dsq-brlink(href='http://disqus.com')
+          | comments powered by
+          span.logo-disqus Disqus

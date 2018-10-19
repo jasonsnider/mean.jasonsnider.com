@@ -1,0 +1,25 @@
+extends layouts/default
+block content
+    h1 Contact and Support
+    form(action="https://formspree.io/your@email.com" method="POST")
+
+        input(type="hidden" name="_next" value="https://jasonsnider.com/thanks")
+        div
+            label(for="subject") Subject
+            select(id="subject" name="_subject")
+                option(value="CONTACT: jasonsndier.com") General Contact
+                option(value="SUPPORT: jasonsnider.com") Support
+        div
+            label(for="subject") Name
+            input(type="text" id="name" name="name")
+
+        div
+            label(for="subject") Email
+            input(type="email" id="email" name="_replyto")
+
+        div
+            label(for="body") Body
+            textarea(id="body" name="body" rows="5")
+            
+        div
+            input(type="submit")

@@ -1,0 +1,15 @@
+extends layouts/default
+
+block content
+
+  article
+    h1= article.title
+    div(itemprop="articleBody")!= article.body
+    div
+      em
+        - var date = new Date(article.published).toISOString().slice(0, 19).replace('T', ' ');
+        small Posted: #{date}
+    div
+      em
+        - var date = new Date(article.modified).toISOString().slice(0, 19).replace('T', ' ');
+        small Modified: #{date}

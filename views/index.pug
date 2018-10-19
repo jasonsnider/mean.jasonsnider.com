@@ -1,0 +1,164 @@
+html
+  head
+
+    if(meta)
+      title= meta.title
+
+      if(meta.description)
+        title= meta.description
+    base(href='/')
+    link(href='fonts/fonts.css', type='text/css', rel='stylesheet')
+    link(href='fontawesome/css/all.min.css', type='text/css', rel='stylesheet')
+    link(href='dist/css/home-page.min.css', type='text/css', rel='stylesheet')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+  body
+    header.cover
+      nav#MainNav
+
+        a.logo(href="/")
+          i.fa.fa-code
+          |&nbsp;Jason Snider
+
+        button#ShowMainNav
+          i.fas.fa-bars.fa-2x
+          span.sr-only Menu
+
+        ul
+          li
+            a#ToAbout(href='#About') About Me
+          li
+            a#ToProject(href='#Project') Projects
+          li
+            a(href='articles') Blog
+          li
+            a(href='games') Games
+          li
+            a(href='tools') Tools
+          li
+            a(href='contact') Contact 
+
+      h1  Jason Snider
+        .tagline  Builder of Things, Doer of Stuff
+
+      .more
+        a#ToAboutNext(href='#About')
+          i.fal.fa-chevron-down
+    main
+      section#About
+        h2 Hello, I'm Jason Snider
+        p
+          img.avatar(alt='64x64', src='/img/b449cfaa4cab48910ad8c0d9fdb812d0.jpg' height='128px' width='128px')
+          | Jason Snider is a full stack web and hybrid mobile application developer, 
+          | indie game dev, dev bootcamp instructor, systems architect, Linux aficionado,
+          | open source advocate, impromptu DBA and security enthusiast with a sincere 
+          | passion for building and advancing knowledge while resolving complex problems  
+          | and business challenges through technical innovation.
+      section#Project
+        h2 Projects
+        ul
+          li
+            .cell
+              h3 MicroTrain
+              .project-logos
+                | LAMP, CakePHP, Cloud, HTML, CSS, JavaScript, jQuery, Gulp
+              p Company Website, Ecommerce, Scheduling and Event Management
+            .project-buttons
+              a
+              a(href='https://www.microtrain.net')
+                | project
+              a
+          li
+            .cell
+              h3 MicroTrain Backoffice
+              .project-logos
+                | LAMP, CakePHP, Cloud, HTML CSS, JavaScript, jQuery, Gulp
+              p CRM, CMS, ERP, Operational Intellgence
+            .project-buttons
+              a
+              a
+              a
+          li
+            .cell
+              h3 The Professional Me
+              .project-logos
+                | LAMP, CakePHP, Cloud, HTML CSS, JavaScript, jQuery, Gulp
+              p Student Portal, Professional Branding, Career Coaching
+            .project-buttons
+              a
+              a(href='https://theprofessional.me')
+                | project
+              a
+          li
+            .cell
+              h3 Tinker MVC
+              .project-logos
+                i.fab.fa-php
+              p An experimental, minimalist, MVC framework.
+            .project-buttons
+              a(href='https://github.com/jasonsnider/tinker-mvc')
+                | code
+              a
+              a
+          li
+            .cell
+              h3 ASCII Sequencer
+              .project-logos
+                | PHP
+              p
+                | Designed for a URL shortening service, this project provides a way to "auto increment" an alphanumeric string.
+            .project-buttons
+              a(href='https://github.com/jasonsnider/ASCII-Sequencer')
+                | code
+              a(href='')
+              a
+          li
+            .cell
+              h3 NASA - APOD
+              .project-logos
+                | jQuery, Sass, Gulp, HTML, CSS, JavaScript
+              p A project using jQuery to interact with NASA's APOD API.
+            .project-buttons
+              a(href='https://github.com/jasonsnider/tinker-mvc')
+                | code
+              a(href='https://jasonsnider.github.io/nasa')
+                | project
+              a
+          li
+            .cell
+              h3 Tinker MVC
+              .project-logos
+                i.fab.fa-php
+              p An experimental, minimalist, MVC framework.
+            .project-buttons
+              a(href='https://github.com/jasonsnider/tinker-mvc')
+                | code
+              a
+              a
+          li
+            .cell
+              h3 Ionic CMS
+              .project-logos Ionic, Angular, TypeScript, Sass, HTML, Webpack
+              p A Hybrid mobile application for managing content and users via REST API.
+            .project-buttons
+              a(href='https://github.com/jasonsnider/ionic-cms')
+                | code
+
+      section#SocialMedia
+        a(href="https://www.linkedin.com/in/jdsnider")
+          i.fab.fa-linkedin
+        a(href="https://github.com/jasonsnider")
+          i.fab.fa-github
+        a(href="https://twitter.com/jason_snider")
+          i.fab.fa-twitter
+
+      footer
+        .left
+          | Built with
+          i.fa.fa-heart(arial-hidden="true")
+          span.sr-only love
+          | by Jason in Chicago
+        .right
+          a(href="privacy") Privacy
+
+    script(src='dist/js/home-page.min.js')

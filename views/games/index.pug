@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block content
+
+  h1= meta.title
+  body!= meta.body
+
+  for article in articles
+    div.article
+      a(href='games/' +   article.slug)
+        h2= article.title
+        div= article.description

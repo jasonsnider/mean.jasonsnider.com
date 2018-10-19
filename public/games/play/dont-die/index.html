@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Don't Die</title>
+        <base href="/games/play/dont-die/">
+        <link rel="manifest" href="/games/play/dont-die/manifest.json">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <meta name="theme-color" content="#3367D6">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <style>
+
+        body{
+            font-family: monospace;
+            padding: 0;
+            margin: 0 auto;
+            height: 99vh;
+            width: 99vw;
+            background: #000;
+            color: #ff9900;
+        }
+
+        *{
+            text-align: center;
+        }
+
+        canvas{
+            border:1px solid black;
+            background: #000;
+        }
+
+        #score{
+            display: block;
+        }
+
+        #game{
+            display: none;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            font-size: 1.4rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            background: -webkit-linear-gradient(white, red, yellow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 1.4rem 0 1rem;
+            margin: 0;
+        }
+        h2{
+            padding: 0 0 1rem;
+            margin: 0;
+            font-size: 2rem;
+
+        }
+
+        .to-start{
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            animation: blink 20s infinite;
+        }
+
+        @keyframes blink {
+            0% { color: #ff9900; }
+            17% { color: #fff;}
+            34% { color: #ff9900; }
+            41% { color: #fff; }
+            58% { color: #ff9900; }
+            75% { color: #fff;}
+            92% { color: #ff9900; }
+            109% { color: #fff; }
+        }
+
+        </style>
+	</head>
+	<body>
+    <div id="score">
+        <h1>Don't Die</h1>
+        <div> 
+          <strong>On Mobile</strong><br>
+          Tap the screen to play.<br>
+          Tap the screen to change direction.
+          <br><br>
+          <strong>On Desktop</strong><br>
+          Tap the  spacebar to play.<br>
+          Tap the spacebar  to change direction.
+        </div>
+    </div>
+    <canvas id="game">
+		Your browser does not support the HTML5 Canvas tag. Please switch to a modern browser
+    </canvas>
+    <script src="main.js"></script>
+	</body>
+</html>

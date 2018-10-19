@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block content
+
+  article(itemscope itemtype="https://schema.org/BlogPosting")
+    h1(itemprop="headline")= article.title
+    div(itemprop="datePublished" content=article.published)
+      em
+        - var date = new Date(article.published).toISOString().slice(0, 19).replace('T', ' ');
+        small Posted: #{date}
+    div(itemprop="articleBody")!= article.body

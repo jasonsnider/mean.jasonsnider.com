@@ -1,0 +1,21 @@
+{
+  "short_name": "DD",
+  "name": "Don't Die",
+  "icons": [
+    {
+      "src": "dont-die-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "dont-die.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/games/play/dont-die/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/games/play/dont-die/",
+  "theme_color": "#3367D6"
+}
