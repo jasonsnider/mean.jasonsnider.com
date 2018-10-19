@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var Articles = require('../../models/articles');
+var Articles = require('../../../models/articles');
 var exjwt = require('express-jwt');
 
 if(process.env.NODE_ENV==='production'){
   var config = require('../../config');
 }else{
-  var config = require('../config.dev');
+  var config = require('../../config.dev');
 }
 
 const jwtMW = exjwt({

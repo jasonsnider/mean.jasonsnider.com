@@ -5,9 +5,9 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 if(process.env.NODE_ENV==='production'){
-  var config = require('../../config');
+  var config = require('../../../config');
 }else{
-  var config = require('../config.dev');
+  var config = require('../../config.dev');
 }
 
 router.post('/register', function(req, res, next) {
