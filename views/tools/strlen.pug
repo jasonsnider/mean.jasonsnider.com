@@ -1,0 +1,18 @@
+extends ../layouts/default
+block content
+  h1 How many characters are in this string?
+
+  p Sometimes I just need to get the length of a string. 
+
+  div
+    label(for="InputString")
+      | Enter a string to calculate it's length
+      span#Results.hide &nbsp;(
+        strong#StringLength
+        | )
+    textarea(id="InputString" rows="5")
+  div
+    small This utility uses only front end JavaScript no data is sent to the server.
+
+  script(src='dist/js/tools/strlen.js')
+

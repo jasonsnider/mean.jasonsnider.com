@@ -1,0 +1,10 @@
+extends ../layouts/default
+
+block content
+
+  for article in articles
+
+    div.article
+      a(href='tools/' +   article.slug)
+        h2= article.title
+        div!= article.description

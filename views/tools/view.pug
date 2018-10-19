@@ -1,0 +1,7 @@
+extends ../layouts/default
+
+block content
+
+  article(itemscope itemtype="https://schema.org/BlogPosting")
+    h1(itemprop="headline")= article.title
+    div(itemprop="articleBody")!= article.body
