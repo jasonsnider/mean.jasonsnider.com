@@ -12,6 +12,15 @@ router.get('/', function(req, res, next) {
   return res.render('index', {meta:{title:'Jason Snider'}});
 });
 
+router.get('/contact', function(req, res, next){
+
+  var meta = {
+    title: 'Contact'
+  };
+
+  return res.render('contact', {'meta': meta});
+});
+
 router.get('/thanks', function(req, res, next){
 
   var meta = {
