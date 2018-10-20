@@ -1,14 +1,14 @@
 {
-  "short_name": "DD",
+  "short_name": "Don't Die",
   "name": "Don't Die",
   "icons": [
     {
-      "src": "dont-die-192.png",
+      "src": "/games/dont-die/dont-die-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "dont-die.png",
+      "src": "d/games/dont-die/ont-die.png",
       "type": "image/png",
       "sizes": "512x512"
     }
