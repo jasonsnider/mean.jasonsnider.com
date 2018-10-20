@@ -9,11 +9,11 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "http-errors": "~1.6.2",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.17",
+    "mongoose": "^5.3.4",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
@@ -21,5 +21,16 @@
     "slug": "^0.9.1",
     "turndown": "^5.0.1",
     "turndown-plugin-gfm": "^1.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "merge-stream": "^1.0.1",
+    "normalize.css": "^8.0.0"
   }
 }
