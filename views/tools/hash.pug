@@ -1,0 +1,22 @@
+extends ../layouts/default
+block content
+  h1= article.title
+  p!= article.body
+
+  div
+
+    label(for="InputCount")
+      | Iterations
+    input(id="InputCount" type="text" value="1")
+
+    label(for="InputString")
+      | Enter a string to return a list of hash values
+    textarea(id="InputString" rows="5")
+
+  div
+    small This utility uses only front end JavaScript no data is sent to the server.
+
+  #Hashes
+
+  script(src='dist/js/tools/hash.min.js')
+

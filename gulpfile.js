@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
@@ -67,6 +67,20 @@ gulp.task('build-js', function() {
   .pipe(gulp.dest('public/dist/js'));
 
   return merge(home, article);
+});
+
+gulp.task('build-hash-js', function() {
+
+  var hash = gulp.src([
+    'node_modules/jssha/src/sha.js',
+    'node_modules/js-md5/src/md5.js',
+    'src/js/tools/hash.js'
+  ])
+  .pipe(concat('hash.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js/tools'));
+
+  return merge(hash);
 });
 
 gulp.task('watch', function(){
