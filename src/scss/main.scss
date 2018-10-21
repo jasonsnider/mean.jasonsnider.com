@@ -127,6 +127,9 @@ nav#MainNav ul li a:active
   }
 }
 
+#showMainNav{
+  color: #fff;
+}
 
 main {
     width: 960px;
@@ -229,22 +232,6 @@ footer .left .fa.fa-heart{
   color: #e75225;
   margin-left: .4em;
   margin-right: .4em;
-}
-
-
-@keyframes LinearEffect {
-    0% {
-        background-position: 0% 50%
-    }
-    25% {
-        background-position: 100% 50%
-    }
-    50% {
-        background-position: 0% 50%
-    }
-    100% {
-        background-position: 100% 50%
-    }
 }
 
 .alert {

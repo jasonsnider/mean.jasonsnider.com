@@ -1,11 +1,26 @@
 @import 'main.scss';
 
+@keyframes LinearEffect {
+  0% {
+      background-position: 0% 50%
+  }
+  25% {
+      background-position: 100% 50%
+  }
+  50% {
+      background-position: 0% 50%
+  }
+  100% {
+      background-position: 100% 50%
+  }
+}
+
 .cover {
   background: linear-gradient(to top left, #222 25%, #777 50%, #222 75%, #777 100%);
-  background-size: 600% 600%;
+  background-size: 6000% 6000%;
   height: 100%;
 
-  animation: LinearEffect 40s ease-in-out;
+  animation: LinearEffect 60s;
   animation-iteration-count: infinite;
   position: relative;
 }
