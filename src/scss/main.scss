@@ -181,21 +181,21 @@ footer {
 }
 
 footer .left{
-  float: left;
-  width: 50%;
-  text-align: left;
+  display: block;
+  text-align: center;
 }
 
 footer .right{
-  float: right;
-  width: 50%;
-  text-align: right;
+  display: block;
+  text-align: center;
 }
 
 footer a,
 footer a:link,
 footer a:visited {
+  display: block;
   font-size: 1.5rem;
+  padding: 1em 0;
 }
 
 footer .left .fa.fa-heart{
@@ -262,6 +262,24 @@ input[type="submit"]:hover{
   small {
     font-size: .5em;
   }
+
+  footer .left{
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+  
+  footer .right{
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+
+  footer .right a{
+    display: inline-block;
+    padding: 0 0 0 2em;
+  }
+  
 }
 
 @media only screen and (min-width : 960px){
