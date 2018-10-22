@@ -17,47 +17,13 @@ html
 
   body
     header
-
-      nav#MainNav
-        a.logo(href="/")
-          i.fa.fa-code
-          |&nbsp;Jason Snider
-
-        button#ShowMainNav
-          i.fas.fa-bars.fa-2x
-          span.sr-only Menu
-
-        ul
-          li
-            a#ToAbout(href='#About') About Me
-          li
-            a#ToProject(href='#Project') Projects
-          li
-            a(href='games') Games
-          li
-            a(href='tools') Tools
-          li
-            a(href='contact') Contact 
+      include ../includes/nav
     main
 
       block content
 
-      section#SocialMedia
-        a(href="https://www.linkedin.com/in/jdsnider")
-          i.fab.fa-linkedin
-        a(href="https://github.com/jasonsnider")
-          i.fab.fa-github
-        a(href="https://twitter.com/jason_snider")
-          i.fab.fa-twitter
-
-      footer
-        .left
-          | Built with
-          i.fa.fa-heart(arial-hidden="true")
-          span.sr-only love
-          | by Jason in Chicago
-        .right
-          a(href="privacy") Privacy
+      include ../includes/social
+      include ../includes/footer
 
     script(src='highlight/highlight.pack.js')
     script(src='dist/js/article.min.js')
