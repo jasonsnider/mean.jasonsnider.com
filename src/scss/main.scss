@@ -106,7 +106,6 @@ main {
   max-width: 90%;
   margin: 60px auto 0;
   font-size: 1.2rem;
-  min-height: 2000px;
 }
 
 pre {
@@ -135,7 +134,7 @@ p code{
 }
 
 .article a div{
-  color: #000;
+  color: rgb(186,186,186);
 }
 
 
@@ -234,6 +233,16 @@ label{
   padding: $form-element-padding;
 }
 
+input[type="text"],
+input[type="email"],
+textarea,
+select,
+option{
+  border-radius: 4px;
+  border: 1px solid rgb(186,186,186);
+}
+
+
 label{
   display: block;
   font-size: 1rem;
@@ -241,17 +250,45 @@ label{
   padding: $form-element-padding 0;
 }
 
+
 input[type="submit"]{
   font-family: 'source_code_proregular', monospace;
-  background: none;
   -webkit-appearance: button;
+  background: #fff;
   font-size: $form-font-size;
   padding: $form-element-padding;
   font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn{
+  font-family: 'source_code_proregular', monospace;
+  background: #fff;
+  font-size: $form-font-size;
+  padding: $form-element-padding;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid rgb(186,186,186);
+  border-radius: 4px;
 }
 
 input[type="submit"]:hover{
   background: #eee;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 @media (min-width : 768px) {
