@@ -7,6 +7,8 @@ var jwt = require('jsonwebtoken');
 var config = require('../../../config');
 
 router.post('/register', function(req, res, next) {
+  return res.json({success: false, err: 'Registration is closed.'});
+  /*
   bcrypt.hash(req.body.password, 13, (err, hash) => {
     Users.create(new Users({
       email: req.body.email,
@@ -22,6 +24,7 @@ router.post('/register', function(req, res, next) {
       return res.json({success: true, user: user});
     });
   });
+  */
 });
 
 router.post('/login', function(req, res, next) {
