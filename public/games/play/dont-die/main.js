@@ -21,6 +21,7 @@ var dontDie = (function(){
   var scoreText = 'Score: ' + score;
   var splashText=null;
   var isSplash=true;
+  var playerSpeed=6;
 
   //player
   var player={
@@ -196,6 +197,11 @@ var dontDie = (function(){
 
     var speed = [Math.floor(Math.random() * speeds.length)];
 
+    //Adjust speed for tablets
+    if(canvas.height>canvas.width && canvas.width>420){
+      speed = speed/6; 
+    }
+
     //store each spawn in a master spawn object, kill off
     //each spawn when it (a) reaches the bottom of the
     //canvas or (b) collides with the player
@@ -299,6 +305,11 @@ var dontDie = (function(){
     scoreText = 'Score: ' + score;
     writeScore();
 
+    //Adjust speed for tablets
+    if(canvas.height>canvas.width && canvas.width>420){
+      playerSpeed=1;
+    }
+    
     player.interval = setInterval(()=>{
 
       ctx.clearRect(player.x, player.y, player.w, player.h);
@@ -320,7 +331,7 @@ var dontDie = (function(){
       ctx.fillStyle = player.color;
       ctx.fillRect(player.x, player.y, player.w, player.h);
 
-    }, 6);
+    }, playerSpeed);
 
     //Create a new spawn every 400ms
     var spawner = setInterval(()=>{
