@@ -1,29 +1,31 @@
-var CACHE_NAME = 'dont-die-v1';
-var urlsToCache = [
-  '/games/play/dont-die/index.html',
-  '/games/play/dont-die/main.css',
-  '/games/play/dont-die/main.js'
-];
+/**
+ * Check out https://googlechromelabs.github.io/sw-toolbox/ for
+ * more info on how to use sw-toolbox to custom configure your service worker.
+ */
 
-self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        //console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
-});
 
-self.addEventListener('activate',  event => {
-  event.waitUntil(self.clients.claim());
-});
+'use strict';
+importScripts('./build/sw-toolbox.js');
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request, {ignoreSearch:true}).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+self.toolbox.options.cache = {
+  name: 'ionic-cache'
+};
+
+// pre-cache our key assets
+self.toolbox.precache(
+  [
+    './build/main.js',
+    './build/vendor.js',
+    './build/main.css',
+    './build/polyfills.js',
+    'index.html',
+    'manifest.json'
+  ]
+);
+
+// dynamically cache any other local assets
+self.toolbox.router.any('/*', self.toolbox.fastest);
+
+// for any other requests go to the network, cache,
+// and then only use that cached resource if your user goes offline
+self.toolbox.router.default = self.toolbox.networkFirst;

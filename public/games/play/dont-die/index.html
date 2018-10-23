@@ -1,108 +1,52 @@
 <!DOCTYPE html>
-<html>
-	<head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <title>Don't Die</title>
-        <base href="/games/play/dont-die/">
-        <link rel="manifest" href="/games/play/dont-die/manifest.json">
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <meta name="theme-color" content="#3367D6">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<html lang="en" dir="ltr">
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.9.2';i.angular='5.2.11';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>Don't Die</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
 
-        <style>
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
 
-        body{
-            font-family: monospace;
-            padding: 0;
-            margin: 0 auto;
-            height: 99vh;
-            width: 99vw;
-            background: #000;
-            color: #ff9900;
-        }
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        *{
-            text-align: center;
-        }
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
 
-        canvas{
-            border:1px solid black;
-            background: #000;
-        }
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
 
-        #score{
-            display: block;
-        }
+  <link href="build/main.css" rel="stylesheet">
 
-        #game{
-            display: none;
-        }
+</head>
+<body>
 
-        ul{
-            padding: 0;
-            margin: 0;
-        }
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
 
-        li {
-            list-style: none;
-            font-size: 1.4rem;
-            padding: 0;
-            margin: 0;
-        }
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
 
-        h1 {
-            font-size: 48px;
-            background: -webkit-linear-gradient(white, red, yellow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding: 1.4rem 0 1rem;
-            margin: 0;
-        }
-        h2{
-            padding: 0 0 1rem;
-            margin: 0;
-            font-size: 2rem;
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
 
-        }
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
 
-        .to-start{
-            padding-top: 1rem;
-            font-size: 1.2rem;
-            animation: blink 20s infinite;
-        }
-
-        @keyframes blink {
-            0% { color: #ff9900; }
-            17% { color: #fff;}
-            34% { color: #ff9900; }
-            41% { color: #fff; }
-            58% { color: #ff9900; }
-            75% { color: #fff;}
-            92% { color: #ff9900; }
-            109% { color: #fff; }
-        }
-
-        </style>
-	</head>
-	<body>
-    <div id="score">
-        <h1>Don't Die</h1>
-        <div> 
-          <strong>On Mobile</strong><br>
-          Tap the screen to play.<br>
-          Tap the screen to change direction.
-          <br><br>
-          <strong>On Desktop</strong><br>
-          Tap the  spacebar to play.<br>
-          Tap the spacebar  to change direction.
-        </div>
-    </div>
-    <canvas id="game">
-		Your browser does not support the HTML5 Canvas tag. Please switch to a modern browser
-    </canvas>
-    <script src="main.js"></script>
-	</body>
+</body>
 </html>

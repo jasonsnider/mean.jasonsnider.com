@@ -1,21 +1,13 @@
 {
-  "short_name": "Don't Die",
-  "name": "Don't Die",
-  "icons": [
-    {
-      "src": "/games/dont-die/dont-die-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "d/games/dont-die/ont-die.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/games/play/dont-die/",
-  "background_color": "#3367D6",
+  "name": "Ionic",
+  "short_name": "Ionic",
+  "start_url": "index.html",
   "display": "standalone",
-  "scope": "/games/play/dont-die/",
-  "theme_color": "#3367D6"
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#4e8ef7",
+  "theme_color": "#4e8ef7"
 }
