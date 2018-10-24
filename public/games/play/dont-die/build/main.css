@@ -25676,13 +25676,18 @@ ion-navbar.toolbar {
 
 h1, h2, .high-score {
   text-transform: uppercase;
-  background: -webkit-linear-gradient(yellow, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f53d3d;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
+}
+
+.sub-title {
+  text-align: center;
+  color: #f53d3d;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .high-score {
@@ -25691,7 +25696,6 @@ h1 {
 
 button.start-button {
   text-transform: uppercase;
-  background: -webkit-linear-gradient(yellow, red);
   font-weight: bold;
 }
 
