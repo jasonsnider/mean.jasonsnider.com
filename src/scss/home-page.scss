@@ -28,7 +28,7 @@
 .cover h1 {
   color: #fff;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   top: calc(50vh - 2rem);
   position: absolute;
   right: 0;
@@ -37,6 +37,7 @@
   padding: 0;
   margin: 0;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: .7rem;
 }
 
 .cover div.tagline {
@@ -49,18 +50,6 @@
   color: #fff;
   letter-spacing: .2rem;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-}
-
-@media only screen and (min-device-width : 0) and (orientation : landscape) {
-  .cover h1 {
-    font-size: 4rem;
-    top: calc(50vh - 4rem);
-  }
-
-  .cover div.tagline {
-    font-size: 2rem;
-    top: calc(50vh + 2rem);
-  }
 }
 
 .cover div.more {
@@ -92,9 +81,36 @@ main {
   border-radius: 50%;
 }
 
-@media only screen and (min-width : 600px) {
+@media only screen and (min-device-width : 0) and (orientation : landscape) {
   .cover h1 {
-    font-size: 3rem;
+    font-size: 3.1rem;
+    letter-spacing: .9rem;
+  }
+
+  .cover div.tagline {
+    font-size: 2rem;
+    top: calc(50vh + 2rem);
+  }
+}
+
+@media only screen and (min-width : 400px) {
+  .cover h1 {
+    font-size: 3.3rem;
+    position: absolute;
+    top: calc(50vh - 3rem);
+    letter-spacing: .7rem;
+  }
+
+  .cover div.tagline {
+    top: calc(50vh + 3rem);
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+  }
+}
+
+@media only screen and (min-width : 642px) {
+  .cover h1 {
+    font-size: 6.6rem;
     position: absolute;
     top: calc(50vh - 3rem);
     letter-spacing: .9rem;
@@ -102,7 +118,8 @@ main {
 
   .cover div.tagline {
     top: calc(50vh + 3rem);
-    font-size: 3rem;
+    font-size: 2.6rem;
+    letter-spacing: .3rem;
   }
 }
 
