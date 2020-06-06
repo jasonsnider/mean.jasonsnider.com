@@ -7,17 +7,7 @@ var concat = require('gulp-concat');
 var merge = require('merge-stream');
 var scss = require('gulp-sass');
 
-gulp.task('default', ['watch']);
-
-gulp.task('build-css', function(){
-  /*
-  var full = gulp.src([
-    'src/scss/main.scss'
-  ])
-  . pipe(scss())
-  . pipe(concat('main.css'))
-  . pipe(gulp.dest('public/dist/css'));
-  */
+function buildCSS(){
 
   var main = gulp.src([
     'src/scss/main.scss'
@@ -28,7 +18,6 @@ gulp.task('build-css', function(){
   . pipe(gulp.dest('public/dist/css'));
 
   var home = gulp.src([
-  // 'src/scss/main.scss',
     'src/scss/home-page.scss'
   ])
   . pipe(scss())
@@ -37,18 +26,9 @@ gulp.task('build-css', function(){
   . pipe(gulp.dest('public/dist/css'));
 
   return merge(main, home);
-});
+}
 
-gulp.task('build-js', function() {
-
-  /*
-  var full = gulp.src([
-    'src/js/main.js',
-    'src/js/cover.js',
-  ])
-  .pipe(concat('home-page.js'))
-  .pipe(gulp.dest('public/dist/js'));
-  */
+function buildJS() {
 
   var home = gulp.src([
     'src/js/main.js',
@@ -67,9 +47,9 @@ gulp.task('build-js', function() {
   .pipe(gulp.dest('public/dist/js'));
 
   return merge(home, article);
-});
+}
 
-gulp.task('build-hash-js', function() {
+function buildHashJS(){
 
   var hash = gulp.src([
     'node_modules/jssha/src/sha.js',
@@ -81,9 +61,19 @@ gulp.task('build-hash-js', function() {
   .pipe(gulp.dest('public/dist/js/tools'));
 
   return merge(hash);
-});
+}
 
-gulp.task('watch', function(){
-  gulp.watch('./src/scss/**/*.scss', ['build-css']);
-  gulp.watch('./src/js/**/*.js', ['build-js']);
-});
+function watchFiles() {
+  gulp.watch('./src/scss/**/*.scss', buildCSS);
+  gulp.watch('./src/js/**/*.js', buildJS);
+}
+
+gulp.task('build-css', buildCSS); 
+
+gulp.task('build-js', buildJS);
+
+gulp.task('build-hash-js', buildHashJS);
+
+gulp.task('default', watchFiles);
+
+gulp.task('watch', watchFiles);
