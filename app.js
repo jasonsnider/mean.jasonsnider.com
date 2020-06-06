@@ -9,12 +9,13 @@ var apiArticlesRouter = require('./routes/api/articles');
 var apiAuthRouter = require('./routes/api/auth');
 var apiUsersRouter = require('./routes/api/users');
 
-var indexRouter = require('./routes/index');
+
 var articlesRouter = require('./routes/articles');
 var authRouter = require('./routes/auth');
+var cmsRouter = require('./routes/cms');
 var gamesRouter = require('./routes/games');
-
 var toolsRouter = require('./routes/tools');
+var indexRouter = require('./routes/index');
 
 var app = express();
 
@@ -55,6 +56,7 @@ app.use('/api/articles', apiArticlesRouter);
 
 app.use('/articles', articlesRouter);
 app.use('/auth', authRouter);
+app.use('/cms', cmsRouter);
 app.use('/games', gamesRouter);
 app.use('/tools', toolsRouter);
 app.use('/', indexRouter);

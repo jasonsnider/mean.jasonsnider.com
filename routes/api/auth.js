@@ -33,7 +33,7 @@ router.post('/login', function(req, res, next) {
   
     if(err){
       return res.json({
-        sucess: false,
+        success: false,
         error: err,
       });
     }
@@ -43,7 +43,7 @@ router.post('/login', function(req, res, next) {
 
         if(err){
           return res.json({
-            sucess: false,
+            success: false,
             error: err,
           });
         }
@@ -57,20 +57,20 @@ router.post('/login', function(req, res, next) {
           }); 
   
           return res.json({
-            sucess: true,
+            success: true,
             token: token
           });
   
         }else{
           return res.json({
-            sucess: false,
+            success: false,
             err: 'invalid credentials'
           });
         }
       });
     }else{
       return res.json({
-        sucess: false,
+        success: false,
         err: 'invalid credentials'
       });
     }

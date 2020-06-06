@@ -102,11 +102,31 @@ function buildAuthAppJS() {
   return merge(full, min);
 }
 
+function buildCmsAppJS() {
+
+  var full = gulp.src([
+    'src/js/app.cms.js'
+  ])
+  .pipe(concat('app.cms.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js'));
+
+  var min = gulp.src([
+    'src/js/app.cms.js'
+  ])
+  .pipe(concat('app.cms.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js'));
+
+  return merge(full, min);
+}
+
 function watchFiles() {
   gulp.watch('./src/scss/**/*.scss', buildCSS);
   gulp.watch(['./src/js/main.js', './src/js/home.js'], buildHomeJS);
   gulp.watch(['./src/js/main.js', './src/js/article.js'], buildArticleJS);
   gulp.watch('./src/js/app.auth.js', buildAuthAppJS);
+  gulp.watch('./src/js/app.cms.js', buildCmsAppJS);
 }
 
 gulp.task('build-css', buildCSS); 
@@ -116,6 +136,8 @@ gulp.task('build-home-js', buildHomeJS);
 gulp.task('build-article-js', buildArticleJS);
 
 gulp.task('build-auth-app-js', buildAuthAppJS);
+
+gulp.task('build-cms-app-js', buildCmsAppJS);
 
 gulp.task('build-hash-js', buildHashJS);
 
