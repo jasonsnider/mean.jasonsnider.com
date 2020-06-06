@@ -5,14 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var articlesRouter = require('./routes/articles');
-var toolsRouter = require('./routes/tools');
-var gamesRouter = require('./routes/games');
-
 var apiArticlesRouter = require('./routes/api/articles');
 var apiAuthRouter = require('./routes/api/auth');
 var apiUsersRouter = require('./routes/api/users');
+
+var indexRouter = require('./routes/index');
+var articlesRouter = require('./routes/articles');
+var authRouter = require('./routes/auth');
+var gamesRouter = require('./routes/games');
+
+var toolsRouter = require('./routes/tools');
 
 var app = express();
 
@@ -50,7 +52,9 @@ app.use('/api/auth', apiAuthRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/articles', apiArticlesRouter);
 
+
 app.use('/articles', articlesRouter);
+app.use('/auth', authRouter);
 app.use('/games', gamesRouter);
 app.use('/tools', toolsRouter);
 app.use('/', indexRouter);
