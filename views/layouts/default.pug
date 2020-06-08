@@ -29,6 +29,7 @@ html
       include ../includes/social
       include ../includes/footer
   
+<<<<<<< Updated upstream
     script.
       var loadDeferredStyles = function() {
         var addStylesNode = document.getElementById("deferred-styles");
@@ -41,5 +42,8 @@ html
           window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
+=======
+    include ../includes/deferJS
+>>>>>>> Stashed changes
 
     script(src='dist/js/article.min.js' async)
