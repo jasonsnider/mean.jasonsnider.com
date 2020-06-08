@@ -21,11 +21,11 @@ router.get('/', jwtMW, function(req, res, next) {
 
 });
 
-router.get('/:slug', jwtMW, function(req,res){
+router.get('/:id', jwtMW, function(req,res){
   
-  var slug = req.params.slug;
+  var id = req.params.id;
 
-  Articles.findOne({'slug':slug}, function(err, article){
+  Articles.findOne({'_id':id}, function(err, article){
 
     if(err){
       return res.json({success:false, error: err});
@@ -72,7 +72,7 @@ router.put('/', jwtMW, function(req, res){
     };
 
     if(data.description){
-    article.description = data.description;
+      article.description = data.description;
     };
 
     if(data.keywords){
