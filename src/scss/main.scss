@@ -65,7 +65,7 @@ nav#MainNav a:link,
 nav#MainNav a:visited,
 nav#MainNav ul li a,
 nav#MainNav ul li a:link,
-nav#MainNav ul li a:visited,
+nav#MainNav ul li a:visited
 {
   display: inline-block;
   line-height: 54px;
@@ -78,7 +78,7 @@ nav#MainNav ul li a:visited,
 
 nav#MainNav ul li a,
 nav#MainNav ul li a:link,
-nav#MainNav ul li a:visited,
+nav#MainNav ul li a:visited
 {
   display: block;
 }
@@ -223,7 +223,6 @@ form > div {
 
 input[type="text"],
 input[type="email"],
-input[type="password"],
 textarea,
 select,
 option,
@@ -237,7 +236,6 @@ label{
 
 input[type="text"],
 input[type="email"],
-input[type="password"],
 textarea,
 select,
 option{
@@ -280,23 +278,6 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
   background: #eee;
-}
-
-.login-form{
-  width:100%;
-  max-width:360px;
-  margin:2rem auto 0;
-}
-
-#formMsg{
-  display:none;
-}
-
-@media all and (max-width:480px){
-  .btn-sm-block{
-      width:100%;
-      display:block;
-  }
 }
 
 .text-center{
@@ -381,7 +362,7 @@ input[type="submit"]:hover{
 
   nav#MainNav ul li a,
   nav#MainNav ul li a:link,
-  nav#MainNav ul li a:visited,
+  nav#MainNav ul li a:visited
   {
     display: inline-block;
     line-height: 54px;

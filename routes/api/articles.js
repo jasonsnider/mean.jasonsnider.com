@@ -87,6 +87,10 @@ router.put('/', jwtMW, function(req, res){
       article.published= data.published;
     };
 
+    if(data.created){
+      article.created= data.created;
+    };
+
     if(data.type){
       article.type= data.type;
     };

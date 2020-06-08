@@ -28,6 +28,27 @@ function buildCSS(){
   return merge(main, home);
 }
 
+function buildAppCSS(){
+
+  var full = gulp.src([
+    'src/scss/app.scss'
+  ])
+  . pipe(scss())
+  . pipe(concat('app.min.css'))
+  . pipe(gulp.dest('public/dist/css'));
+
+  var min = gulp.src([
+    'src/scss/app.scss'
+  ])
+  . pipe(scss())
+  . pipe(cleanCSS())
+  . pipe(concat('app.min.css'))
+  . pipe(gulp.dest('public/dist/css'));
+
+  return merge(full, min);
+}
+
+
 function buildHomeJS() {
 
   var full = gulp.src([
@@ -83,6 +104,26 @@ function buildHashJS(){
   return merge(hash);
 }
 
+function buildAppJS() {
+
+  var full = gulp.src([
+    'src/js/app.js'
+  ])
+  .pipe(concat('app.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js'));
+
+  var min = gulp.src([
+    'src/js/app.js'
+  ])
+  .pipe(concat('app.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js'));
+
+  return merge(full, min);
+}
+
+
 function buildAuthAppJS() {
 
   var full = gulp.src([
@@ -108,7 +149,6 @@ function buildCmsAppJS() {
     'src/js/app.cms.js'
   ])
   .pipe(concat('app.cms.js'))
-  .pipe(uglify())
   .pipe(gulp.dest('public/dist/js'));
 
   var min = gulp.src([
@@ -122,18 +162,24 @@ function buildCmsAppJS() {
 }
 
 function watchFiles() {
-  gulp.watch('./src/scss/**/*.scss', buildCSS);
+  gulp.watch(['./src/scss/main.scss', './src/scss/home-page.scss'], buildCSS);
+  gulp.watch('./src/scss/app.scss', buildAppCSS);
   gulp.watch(['./src/js/main.js', './src/js/home.js'], buildHomeJS);
   gulp.watch(['./src/js/main.js', './src/js/article.js'], buildArticleJS);
   gulp.watch('./src/js/app.auth.js', buildAuthAppJS);
+  gulp.watch('./src/js/app.js', buildAppJS);
   gulp.watch('./src/js/app.cms.js', buildCmsAppJS);
 }
+
+gulp.task('build-app-css', buildAppCSS);
 
 gulp.task('build-css', buildCSS); 
 
 gulp.task('build-home-js', buildHomeJS);
 
 gulp.task('build-article-js', buildArticleJS);
+
+gulp.task('build-app-js', buildAppJS);
 
 gulp.task('build-auth-app-js', buildAuthAppJS);
 
