@@ -94,6 +94,19 @@ router.get('/:slug', function(req, res, next) {
     }
 
     if(article!=null){
+
+      if(article.type == 'post'){
+        return res.redirect(301, '/articles/' + article.slug);
+      }
+
+      if(article.type == 'game'){
+        return res.redirect(301, '/games/' + article.slug);
+      }
+
+      if(article.type == 'tool'){
+        return res.redirect(301, '/tools/' + article.slug);
+      }
+
       var meta = {
         title: article.title,
         description: article.description,

@@ -14,6 +14,7 @@ var articlesRouter = require('./routes/articles');
 var authRouter = require('./routes/auth');
 var cmsRouter = require('./routes/cms');
 var gamesRouter = require('./routes/games');
+var postRouter = require('./routes/post');
 var toolsRouter = require('./routes/tools');
 var indexRouter = require('./routes/index');
 
@@ -58,6 +59,7 @@ app.use('/articles', articlesRouter);
 app.use('/auth', authRouter);
 app.use('/cms', cmsRouter);
 app.use('/games', gamesRouter);
+app.use('/post', postRouter);
 app.use('/tools', toolsRouter);
 app.use('/', indexRouter);
 
