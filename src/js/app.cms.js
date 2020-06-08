@@ -242,9 +242,6 @@ var articlesApp = (function () {
                 <div>
                   <input type="hidden" id="_id" name="_id" class="form-control" value="${data.article._id}" required>
                 </div>
-                <div>
-                  <input type="hidden" id="created" name="created" class="form-control" value="${data.article.created}" required>
-                </div>
   
                 <div class="text-right">
                   <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-sm-block">
@@ -266,7 +263,6 @@ var articlesApp = (function () {
       let form = document.getElementById(formId);
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-  
         let formData = new FormData(form);
         let uri = `${window.location.origin}${url}`;
         let xhr = new XMLHttpRequest();
@@ -285,9 +281,8 @@ var articlesApp = (function () {
         xhr.send(JSON.stringify(object));
         xhr.onload = function () {
           let data = JSON.parse(xhr.response);
-          console.log(data);
           if (data.success === true) {
-            window.location.href = '/cms';
+            window.location.href = `/cms#view-${data.article._id}`;
           } else {
             document.getElementById('formMsg').style.display = 'block';
           }

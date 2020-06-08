@@ -66,7 +66,6 @@ router.put('/', jwtMW, function(req, res){
    if(article) {
 
     let data = req.body;
-
     if(data.title){
       article.title = data.title;
     };
@@ -107,7 +106,6 @@ router.put('/', jwtMW, function(req, res){
       if(err){
         return res.json({success: false, error: err});
       }else{
-        console.log(article);
         return res.json({success: true, article:article});
       }
     });
