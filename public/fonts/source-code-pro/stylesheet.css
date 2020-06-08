@@ -8,7 +8,7 @@
          url('sourcecodepro-semibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -20,7 +20,7 @@
          url('sourcecodepro-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -32,7 +32,7 @@
          url('sourcecodepro-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
