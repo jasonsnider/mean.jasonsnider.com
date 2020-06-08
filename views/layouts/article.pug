@@ -13,6 +13,7 @@ html
     link(rel='preload' href='fonts/fonts.css' as='style')
     link(rel='preload' href='fontawesome/css/all.min.css' as='style')
     link(rel='preload' href='dist/css/main.min.css' as='style')
+    link(rel='preload' href='/highlight/styles/atom-one-dark.css' as='style')
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
   body
@@ -20,6 +21,7 @@ html
       link(rel='stylesheet' href='fonts/fonts.css' type='text/css')
       link(rel='stylesheet' href='fontawesome/css/all.min.css')
       link(rel='stylesheet' href='dist/css/main.min.css')
+      link(rel='stylesheet' href='/highlight/styles/atom-one-dark.css')
     header
       include ../includes/nav
     main
@@ -42,4 +44,5 @@ html
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
 
+    script(src='highlight/highlight.pack.js' async)
     script(src='dist/js/article.min.js' async)

@@ -7,9 +7,16 @@ var concat = require('gulp-concat');
 var merge = require('merge-stream');
 var scss = require('gulp-sass');
 
-function buildCSS(){
+function buildMainCSS(){
 
-  var main = gulp.src([
+  var full = gulp.src([
+    'src/scss/main.scss'
+  ])
+  . pipe(scss())
+  . pipe(concat('main.css'))
+  . pipe(gulp.dest('public/dist/css'));
+
+  var min = gulp.src([
     'src/scss/main.scss'
   ])
   . pipe(scss())
@@ -17,7 +24,19 @@ function buildCSS(){
   . pipe(concat('main.min.css'))
   . pipe(gulp.dest('public/dist/css'));
 
-  var home = gulp.src([
+  return merge(min, full);
+}
+
+function buildHomeCSS(){
+
+  var full = gulp.src([
+    'src/scss/home-page.scss'
+  ])
+  . pipe(scss())
+  . pipe(concat('home-page.css'))
+  . pipe(gulp.dest('public/dist/css'));
+
+  var min = gulp.src([
     'src/scss/home-page.scss'
   ])
   . pipe(scss())
@@ -25,8 +44,9 @@ function buildCSS(){
   . pipe(concat('home-page.min.css'))
   . pipe(gulp.dest('public/dist/css'));
 
-  return merge(main, home);
+  return merge(full, min);
 }
+
 
 function buildAppCSS(){
 
@@ -162,7 +182,8 @@ function buildCmsAppJS() {
 }
 
 function watchFiles() {
-  gulp.watch(['./src/scss/main.scss', './src/scss/home-page.scss'], buildCSS);
+  gulp.watch(['./src/scss/main.scss'], buildMainCSS);
+  gulp.watch(['./src/scss/main.scss', './src/scss/home-page.scss'], buildHomeCSS);
   gulp.watch('./src/scss/app.scss', buildAppCSS);
   gulp.watch(['./src/js/main.js', './src/js/home.js'], buildHomeJS);
   gulp.watch(['./src/js/main.js', './src/js/article.js'], buildArticleJS);
@@ -173,7 +194,9 @@ function watchFiles() {
 
 gulp.task('build-app-css', buildAppCSS);
 
-gulp.task('build-css', buildCSS); 
+gulp.task('build-main-css', buildMainCSS); 
+
+gulp.task('build-home-css', buildHomeCSS); 
 
 gulp.task('build-home-js', buildHomeJS);
 
