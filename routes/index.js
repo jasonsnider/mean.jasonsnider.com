@@ -44,7 +44,7 @@ router.get('/sitemap.xml', function(req, res, next){
     for(post of posts){
 
       urls = urls + `<url>
-        <loc>https://jasonsnider.com/article/${post.slug}</loc>
+        <loc>https://jasonsnider.com/${post.slug}</loc>
         <lastmod>${new Date(post.published).toISOString()}</lastmod>
         <priority>0.80</priority>
       </url>`;
@@ -67,21 +67,6 @@ router.get('/sitemap.xml', function(req, res, next){
           <loc>https://jasonsnider.com/articles</loc>
           <lastmod>2018-08-12T16:59:50+00:00</lastmod>
           <priority>0.95</priority>
-        </url>
-        <url>
-          <loc>https://jasonsnider.com/games</loc>
-          <lastmod>2018-08-12T16:59:50+00:00</lastmod>
-          <priority>0.95</priority>
-        </url>
-        <url>
-          <loc>https://jasonsnider.com/tools</loc>
-          <lastmod>2018-08-12T16:59:50+00:00</lastmod>
-          <priority>0.90</priority>
-        </url>
-        <url>
-          <loc>https://jasonsnider.com/privacy</loc>
-          <lastmod>2018-08-12T16:59:50+00:00</lastmod>
-          <priority>0.80</priority>
         </url>
         <url>
           <loc>https://jasonsnider.com/contact</loc>
