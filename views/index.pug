@@ -6,13 +6,19 @@ html
 
       if(meta.description)
         title= meta.description
+    style.
+      body{display:none;}
     base(href='/')
-    link(href='fonts/fonts.css', type='text/css', rel='stylesheet')
-    link(href='fontawesome/css/all.min.css', type='text/css', rel='stylesheet')
-    link(href='dist/css/home-page.min.css', type='text/css', rel='stylesheet')
+    link(rel='preload' href='fonts/fonts.css' as='style')
+    link(rel='preload' href='fontawesome/css/all.min.css' as='style')
+    link(rel='preload' href='dist/css/home-page.min.css' as='style')
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
   body
+    noscript(id="deferred-styles")
+      link(rel='stylesheet' href='fonts/fonts.css' type='text/css')
+      link(rel='stylesheet' href='fontawesome/css/all.min.css')
+      link(rel='stylesheet' href='dist/css/home-page.min.css')
     header.cover
       include includes/nav
 
@@ -26,7 +32,7 @@ html
       section#About
         h2 Hello, I'm Jason Snider
         p
-          img.avatar(alt='64x64', src='/img/b449cfaa4cab48910ad8c0d9fdb812d0.jpg' height='128px' width='128px')
+          img.avatar(alt='64x64', src='/img/b449cfaa4cab48910ad8c0d9fdb812d0-128.jpg' height='128px' width='128px')
           | Jason Snider is a full stack web and hybrid mobile application developer, 
           | indie game dev, dev bootcamp instructor, systems architect, Linux aficionado,
           | open source advocate, impromptu DBA and security enthusiast with a sincere 
@@ -83,4 +89,5 @@ html
       include includes/social
       include includes/footer
 
+    include ./includes/deferJS
     script(src='dist/js/home-page.min.js')
