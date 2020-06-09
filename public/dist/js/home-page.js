@@ -108,7 +108,7 @@ document.getElementById('ToAboutNext').addEventListener(
     e.preventDefault();
   }
 );
-
+/*
 document.getElementById('ToProject').addEventListener(
   'click',
   function(e) {
@@ -125,4 +125,5 @@ document.getElementById('ToProject').addEventListener(
     e.preventDefault();
   }
 );
+*/
 
