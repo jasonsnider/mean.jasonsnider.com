@@ -20,7 +20,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-var config = require('../config');
+var config = require('./config');
 
 //Connect to MongoDB
 mongoose.connect(config.mongodb, { useNewUrlParser: true });

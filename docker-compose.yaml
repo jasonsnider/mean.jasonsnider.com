@@ -1,0 +1,16 @@
+services:
+  app:
+    image: mean-jasonsnider
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    dns:
+      - 8.8.8.8
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge

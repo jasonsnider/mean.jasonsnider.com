@@ -4,7 +4,7 @@ var Users = require('../../models/users');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
-var config = require('../../../config');
+var config = require('../../config');
 
 router.post('/register', function(req, res, next) {
   return res.json({success: false, err: 'Registration is closed.'});

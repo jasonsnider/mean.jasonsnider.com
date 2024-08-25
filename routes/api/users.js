@@ -3,7 +3,7 @@ var router = express.Router();
 var Users = require('../../models/users');
 var exjwt = require('express-jwt');
 
-var config = require('../../../config');
+var config = require('../../config');
 
 const jwtMW = exjwt({
   secret: config.jwt.secret
