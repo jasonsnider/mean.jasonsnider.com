@@ -16,7 +16,7 @@
     "mongoose": "^5.3.4",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "showdown": "^1.8.7",
     "slug": "^0.9.1",
     "turndown": "^5.0.1",
